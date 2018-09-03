@@ -37,7 +37,7 @@ class SpecialityController extends Controller
      */
     public function show($id)
     {
-       return new SpecialityResource(Speciality::find($id));
+       return new SpecialityResource(Speciality::with('services')->where('id',$id)->first());
     }
 
     /**
