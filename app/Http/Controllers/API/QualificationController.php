@@ -3,59 +3,59 @@
 namespace App\Http\Controllers\API;
 
 use Asahasrabuddhe\LaravelAPI\BaseController;
-use App\Speciality;
-// use App\Http\Requests\SpecialityIndexRequest;
-// use App\Http\Requests\SpecialityStoreRequest;
-// use App\Http\Requests\SpecialityShowRequest;
-// use App\Http\Requests\SpecialityUpdateRequest;
-// use App\Http\Requests\SpecialityDeleteRequest;
+
+use App\Qualification;
+// use App\Http\Requests\QualificationIndexRequest;
+// use App\Http\Requests\QualificationStoreRequest;
+// use App\Http\Requests\QualificationShowRequest;
+// use App\Http\Requests\QualificationUpdateRequest;
+// use App\Http\Requests\QualificationDeleteRequest;
 /**
- * Class Speciality.
+ * Class Qualification.
  */
-class SpecialityController extends BaseController
+class QualificationController extends BaseController
 {
     /*
      * Fully qualified name of the Model class that this controller represents.
      *
      * @var string
      */
-     protected $model = Speciality::class;
-
+     protected $model = Qualification::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the index request.
      *
      * @var string
      */
-    // protected $indexRequest = SpecialityIndexRequest::class;
+    // protected $indexRequest = QualificationIndexRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the store request.
      *
      * @var string
      */
-    // protected $storeRequest = SpecialityStoreRequest::class;
+    // protected $storeRequest = QualificationStoreRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the show request.
      *
      * @var string
      */
-    // protected $showRequest = SpecialityShowRequest::class;
+    // protected $showRequest = QualificationShowRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the update request.
      *
      * @var string
      */
-    // protected $updateRequest = SpecialityUpdateRequest::class;
+    // protected $updateRequest = QualificationUpdateRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the delete request.
      *
      * @var string
      */
-    // protected $deleteRequest = SpecialityDeleteRequest::class;
+    // protected $deleteRequest = QualificationDeleteRequest::class;
 
     /*
      * Modify the query for index request.

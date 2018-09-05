@@ -2,64 +2,102 @@
 
 namespace App\Http\Controllers\API;
 
+use Asahasrabuddhe\LaravelAPI\BaseController;
 use App\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\User as UserResource;
-class UserController extends Controller
+// use App\Http\Requests\UserIndexRequest;
+// use App\Http\Requests\UserStoreRequest;
+// use App\Http\Requests\UserShowRequest;
+// use App\Http\Requests\UserUpdateRequest;
+// use App\Http\Requests\UserDeleteRequest;
+/**
+ * Class User.
+ */
+class UserController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
+    /*
+     * Fully qualified name of the Model class that this controller represents.
      *
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function index()
-    {
-        return new UserResource(User::paginate());
-    }
+     protected $model = User::class;
 
-    /**
-     * Store a newly created resource in storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the index request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // protected $indexRequest = UserIndexRequest::class;
 
-    /**
-     * Display the specified resource.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the store request.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function show($id)
-    {
-        return new UserResource(User::find($id));
-    }
+    // protected $storeRequest = UserStoreRequest::class;
 
-    /**
-     * Update the specified resource in storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the show request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // protected $showRequest = UserShowRequest::class;
 
-    /**
-     * Remove the specified resource from storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the update request.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // protected $updateRequest = UserUpdateRequest::class;
+
+    /*
+     * Fully qualified name of the Request class that will be used to validate the delete request.
+     *
+     * @var string
+     */
+    // protected $deleteRequest = UserDeleteRequest::class;
+
+//     public function index(){
+//        return new UserResource(parent::index());
+//     }
+    /*
+     * Modify the query for index request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyIndex($query)
+    // {
+    //     Modifications like adding joins, inner queries etc can be done here.
+    //     return $query->where("status", "active");
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for show request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyShow($query)
+    // {
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for update request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyUpdate($query)
+    // {
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for delete request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyDelete($query)
+    // {
+    //     return $query;
+    // }
 }

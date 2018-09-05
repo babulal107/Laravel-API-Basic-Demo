@@ -3,81 +3,88 @@
 namespace App\Http\Controllers\API;
 
 use Asahasrabuddhe\LaravelAPI\BaseController;
-use App\Speciality;
-// use App\Http\Requests\SpecialityIndexRequest;
-// use App\Http\Requests\SpecialityStoreRequest;
-// use App\Http\Requests\SpecialityShowRequest;
-// use App\Http\Requests\SpecialityUpdateRequest;
-// use App\Http\Requests\SpecialityDeleteRequest;
+
+use App\User;
+use Stripe;
+// use App\Http\Requests\PatientIndexRequest;
+// use App\Http\Requests\PatientStoreRequest;
+// use App\Http\Requests\PatientShowRequest;
+// use App\Http\Requests\PatientUpdateRequest;
+// use App\Http\Requests\PatientDeleteRequest;
 /**
- * Class Speciality.
+ * Class Patient.
  */
-class SpecialityController extends BaseController
+class PatientController extends BaseController
 {
     /*
      * Fully qualified name of the Model class that this controller represents.
      *
      * @var string
      */
-     protected $model = Speciality::class;
-
+     protected $model = User::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the index request.
      *
      * @var string
      */
-    // protected $indexRequest = SpecialityIndexRequest::class;
+    // protected $indexRequest = PatientIndexRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the store request.
      *
      * @var string
      */
-    // protected $storeRequest = SpecialityStoreRequest::class;
+    // protected $storeRequest = PatientStoreRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the show request.
      *
      * @var string
      */
-    // protected $showRequest = SpecialityShowRequest::class;
+    // protected $showRequest = PatientShowRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the update request.
      *
      * @var string
      */
-    // protected $updateRequest = SpecialityUpdateRequest::class;
+    // protected $updateRequest = PatientUpdateRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the delete request.
      *
      * @var string
      */
-    // protected $deleteRequest = SpecialityDeleteRequest::class;
+    // protected $deleteRequest = PatientDeleteRequest::class;
 
+    public function store() {
+        $customer = Stripe::customers()->create([
+            'email' => request()->email,
+        ]);
+        request()->request->add(['stripe_id'=>$customer['id']]);
+        request()->request->add(['user_type'=>'P']);
+        return parent::store();
+    }
     /*
      * Modify the query for index request.
      * @param $query
      * @return mixed
      */
-    // protected function modifyIndex($query)
-    // {
-    //     Modifications like adding joins, inner queries etc can be done here.
-    //     return $query->where("status", "active");
-    //     return $query;
-    // }
+     protected function modifyIndex($query)
+     {
+        return $query->where("user_type", "P");
+     }
 
     /*
      * Modify the query for show request.
      * @param $query
      * @return mixed
      */
-    // protected function modifyShow($query)
-    // {
-    //     return $query;
-    // }
+     protected function modifyShow($query)
+     {
+        return $query->where("user_type", "P");
+     }
 
     /*
      * Modify the query for update request.

@@ -2,14 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Asahasrabuddhe\LaravelAPI\BaseModel;
+use App\Http\Resources\Speciality as SpecialityResource;
 use App\Service;
-class Speciality extends Model
+class Speciality extends BaseModel
 {
     protected $fillable = ['name'];
     
     public $timestamps=false;
     
+//    protected $resource = SpecialityResource::class;
     /**
      * The attributes that are mass assignable.
      *
@@ -22,4 +24,6 @@ class Speciality extends Model
     public function services() {
         return $this->hasMany(Service::class);
     }
+    
+    protected $default = ['id','name'];
 }

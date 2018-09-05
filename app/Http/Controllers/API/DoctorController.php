@@ -3,81 +3,85 @@
 namespace App\Http\Controllers\API;
 
 use Asahasrabuddhe\LaravelAPI\BaseController;
-use App\Speciality;
-// use App\Http\Requests\SpecialityIndexRequest;
-// use App\Http\Requests\SpecialityStoreRequest;
-// use App\Http\Requests\SpecialityShowRequest;
-// use App\Http\Requests\SpecialityUpdateRequest;
-// use App\Http\Requests\SpecialityDeleteRequest;
+
+use App\User;
+use Illuminate\Http\Request;
+// use App\Http\Requests\DoctorIndexRequest;
+use App\Http\Requests\DoctorStoreRequest;
+// use App\Http\Requests\DoctorShowRequest;
+// use App\Http\Requests\DoctorUpdateRequest;
+// use App\Http\Requests\DoctorDeleteRequest;
 /**
- * Class Speciality.
+ * Class Doctor.
  */
-class SpecialityController extends BaseController
+class DoctorController extends BaseController
 {
     /*
      * Fully qualified name of the Model class that this controller represents.
      *
      * @var string
      */
-     protected $model = Speciality::class;
-
+     protected $model = User::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the index request.
      *
      * @var string
      */
-    // protected $indexRequest = SpecialityIndexRequest::class;
+    // protected $indexRequest = DoctorIndexRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the store request.
      *
      * @var string
      */
-    // protected $storeRequest = SpecialityStoreRequest::class;
+     protected $storeRequest = DoctorStoreRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the show request.
      *
      * @var string
      */
-    // protected $showRequest = SpecialityShowRequest::class;
+    // protected $showRequest = DoctorShowRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the update request.
      *
      * @var string
      */
-    // protected $updateRequest = SpecialityUpdateRequest::class;
+    // protected $updateRequest = DoctorUpdateRequest::class;
 
     /*
      * Fully qualified name of the Request class that will be used to validate the delete request.
      *
      * @var string
      */
-    // protected $deleteRequest = SpecialityDeleteRequest::class;
+    // protected $deleteRequest = DoctorDeleteRequest::class;
 
+    public function store() {
+        request()->request->add(['user_type'=>'D']);
+        return parent::store();
+    }
     /*
      * Modify the query for index request.
      * @param $query
      * @return mixed
      */
-    // protected function modifyIndex($query)
-    // {
-    //     Modifications like adding joins, inner queries etc can be done here.
-    //     return $query->where("status", "active");
-    //     return $query;
-    // }
+     protected function modifyIndex($query)
+     {
+//         Modifications like adding joins, inner queries etc can be done here.
+        return $query->where("user_type", "D");
+     }
 
     /*
      * Modify the query for show request.
      * @param $query
      * @return mixed
      */
-    // protected function modifyShow($query)
-    // {
-    //     return $query;
-    // }
+     protected function modifyShow($query)
+     {
+        return $query->where("user_type", "D");
+     }
 
     /*
      * Modify the query for update request.

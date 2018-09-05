@@ -2,64 +2,98 @@
 
 namespace App\Http\Controllers\API;
 
+use Asahasrabuddhe\LaravelAPI\BaseController;
 use App\Service;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Service as ServiceResource;
-class ServiceController extends Controller
+// use App\Http\Requests\ServiceIndexRequest;
+// use App\Http\Requests\ServiceStoreRequest;
+// use App\Http\Requests\ServiceShowRequest;
+// use App\Http\Requests\ServiceUpdateRequest;
+// use App\Http\Requests\ServiceDeleteRequest;
+/**
+ * Class Service.
+ */
+class ServiceController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
+    /*
+     * Fully qualified name of the Model class that this controller represents.
      *
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function index()
-    {
-        return new ServiceResource(Service::paginate());
-    }
+     protected $model = Service::class;
+    /*
+     * Fully qualified name of the Request class that will be used to validate the index request.
+     *
+     * @var string
+     */
+    // protected $indexRequest = ServiceIndexRequest::class;
 
-    /**
-     * Store a newly created resource in storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the store request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // protected $storeRequest = ServiceStoreRequest::class;
 
-    /**
-     * Display the specified resource.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the show request.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function show($id)
-    {
-        return new ServiceResource(Service::find($id));
-    }
+    // protected $showRequest = ServiceShowRequest::class;
 
-    /**
-     * Update the specified resource in storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the update request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    // protected $updateRequest = ServiceUpdateRequest::class;
 
-    /**
-     * Remove the specified resource from storage.
+    /*
+     * Fully qualified name of the Request class that will be used to validate the delete request.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @var string
      */
-    public function destroy($id)
-    {
-        //
-    }
+    // protected $deleteRequest = ServiceDeleteRequest::class;
+
+    /*
+     * Modify the query for index request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyIndex($query)
+    // {
+    //     Modifications like adding joins, inner queries etc can be done here.
+    //     return $query->where("status", "active");
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for show request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyShow($query)
+    // {
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for update request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyUpdate($query)
+    // {
+    //     return $query;
+    // }
+
+    /*
+     * Modify the query for delete request.
+     * @param $query
+     * @return mixed
+     */
+    // protected function modifyDelete($query)
+    // {
+    //     return $query;
+    // }
 }
