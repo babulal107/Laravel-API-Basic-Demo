@@ -9,7 +9,7 @@ class Service extends BaseModel
 {
     protected $fillable = ['name','speciality_id'];
     
-//    protected $resource = ServiceResource::class;
+    protected $resource = ServiceResource::class;
     /**
      * The attributes that are mass assignable.
      *
@@ -24,5 +24,8 @@ class Service extends BaseModel
     }
     
     protected $default = ['id','name'];
-
+    
+    public function doctors(){
+        return $this->belongsToMany(User::class);
+    }
 }

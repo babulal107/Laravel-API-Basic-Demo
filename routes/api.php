@@ -28,6 +28,3 @@ Route::apiResource('services', 'API\ServiceController');
 Route::apiResource('specialities', 'API\SpecialityController');
 Route::apiResource('certificates', 'API\CertificateController');
 Route::apiResource('qualifications', 'API\QualificationController');
-//ApiRoute::resource('users', 'App\Http\Controllers\API\UserController');
-//ApiRoute::resource('services', 'App\Http\Controllers\API\ServiceController');
-//ApiRoute::resource('specialities', 'App\Http\Controllers\API\SpecialityController');

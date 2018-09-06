@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function qualifications() {
         return $this->hasMany(Qualification::class);
     }
+    
+    public function services(){
+        return $this->belongsToMany(Service::class);
+    }
 }

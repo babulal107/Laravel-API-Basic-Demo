@@ -10,7 +10,7 @@ use Asahasrabuddhe\LaravelAPI\BaseModel as Model;
  */
 class Certificate extends Model
 {
-    //protected $fillable = ['name','number','date','user_id'];
+    protected $fillable = ['name','number','date','user_id'];
     /*
      * Fully qualified of the Eloquent API Resource class that this model will be transformed into
      *

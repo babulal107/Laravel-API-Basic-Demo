@@ -11,7 +11,7 @@ class Speciality extends BaseModel
     
     public $timestamps=false;
     
-//    protected $resource = SpecialityResource::class;
+    protected $resource = SpecialityResource::class;
     /**
      * The attributes that are mass assignable.
      *
