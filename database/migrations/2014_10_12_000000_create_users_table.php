@@ -18,10 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('mobile');
-            $table->timestamp('dateofbirth');
-            $table->tinyInteger('gender');
+            $table->date('date_of_birth');
+            $table->enum('gender',['M','F','O'])->default('M')->comment("M=>Male,F=>Female,O=>Other");
             $table->string('password');
             $table->string('stripe_id')->nullable();
+            $table->unsignedInteger('clinic_id')->nullable();
             $table->enum('user_type', ['D', 'P','A','C'])->default('P')->comment("D => Doctor, P=> Patient, A=> Admin, C=> Clinic");
             $table->rememberToken();
             $table->timestamps();

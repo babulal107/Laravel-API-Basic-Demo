@@ -14,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','mobile','dateofbirth','gender','user_type','stripe_id'
+        'name', 'email', 'password','mobile','date_of_birth','gender','user_type','stripe_id'
     ];
 
     /**
@@ -35,7 +35,7 @@ class User extends Authenticatable
         'id', 'name', 'email','mobile','gender'
     ];
     
-    protected $default = ['id','name','email','mobile','dateofbirth','gender'];
+    protected $default = ['id','name','email','mobile','date_of_birth','gender'];
     
     
 //    protected $resource = UserResource::class;

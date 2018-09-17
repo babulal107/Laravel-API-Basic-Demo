@@ -23,12 +23,6 @@ class CreateQualificationsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
-        $qualifications = array(
-            array('institute' => 'AIMM 1','degree'=>'BCS','from_date'=>'2017-09-29','to_date'=>'2018-06-30','user_id'=>11),
-            array('institute' => 'AIMM 2','degree'=>'MSC','from_date'=>'2017-09-01','to_date'=>'2018-06-30','user_id'=>11),
-            array('institute' => 'AIMM 3','degree'=>'MBBS','from_date'=>'2017-09-25','to_date'=>'2018-06-30','user_id'=>11),
-        );
-        \App\Qualification::insert($qualifications);
     }
 
     /**

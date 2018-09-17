@@ -29,7 +29,7 @@ class DoctorStoreRequest extends FormRequest
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'mobile' => 'required',
-            'dateofbirth' => 'required',
+            'date_of_birth' => 'required',
             'gender' => 'required'
         ];
         

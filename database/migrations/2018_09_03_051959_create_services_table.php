@@ -21,18 +21,6 @@ class CreateServicesTable extends Migration
             $table->timestamps();
             $table->foreign('speciality_id')->references('id')->on('specialities');
         });
-        
-        $services = array(
-            array('name' => 'Gall Bladder Disorders','speciality_id'=>1),
-            array('name' => 'Hernias','speciality_id'=>1),
-            array('name' => 'Thyroid Disease','speciality_id'=>1),
-            array('name' => 'Skin Lesions','speciality_id'=>1),
-            array('name' => 'Gastrointestinal Bleeding','speciality_id'=>1),
-            array('name' => 'Transplant Surgery','speciality_id'=>2),
-            array('name' => 'Brain tumors','speciality_id'=>6),
-            array('name' => 'Stroke and cerebrovascular diseases','speciality_id'=>6),
-        );
-        \App\Service::insert($services);
     }
 
     /**

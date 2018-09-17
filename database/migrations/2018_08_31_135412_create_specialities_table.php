@@ -20,15 +20,12 @@ class CreateSpecialitiesTable extends Migration
         });
         
         $specilities = array(
-            array('id'=>1,'name' => 'General Surgery'),
-            array('id'=>2,'name' => 'Transplant Surgery'),
-            array('id'=>3,'name' => 'Orthopedic Surgery'),
-            array('id'=>4,'name' => 'Neuro Surgery'),
-            array('id'=>5,'name' => 'Demotology'),
-            array('id'=>6,'name' => 'Neurology'),
-            array('id'=>7,'name' => 'Pathology'),
-            array('id'=>8,'name' => 'Radiology'),
-            array('id'=>9,'name' => 'Family Practice'),
+            array('id'=>1,'name' => 'Dentist'),
+            array('id'=>2,'name' => 'Aesthetics'),
+            array('id'=>3,'name' => 'Geriatric'),
+            array('id'=>4,'name' => 'Pediatrician'),
+            array('id'=>5,'name' => 'Wheeler'),
+            array('id'=>6,'name' => 'Woman Sp.')
         );
         \App\Speciality::insert($specilities);
     }

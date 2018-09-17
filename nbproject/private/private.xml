@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/ouch_app_dingo/app/Http/Controllers/API/QualificationController.php</file>
-            <file>file:/var/www/html/ouch_app_dingo/app/Certificate.php</file>
-            <file>file:/var/www/html/ouch_app_dingo/app/Http/Controllers/API/PatientController.php</file>
-            <file>file:/var/www/html/ouch_app_dingo/routes/api.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/factories/ServiceFactory.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/factories/UserFactory.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/seeds/DoctorsTableSeeder.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/seeds/ServicesTableSeeder.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/factories/QualificationFactory.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/factories/CertificateFactory.php</file>
+            <file>file:/var/www/html/ouch_app_dingo/database/seeds/DatabaseSeeder.php</file>
         </group>
     </open-files>
 </project-private>
